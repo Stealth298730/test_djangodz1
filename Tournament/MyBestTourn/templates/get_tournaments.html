@@ -1,0 +1,29 @@
+{% extends "base.html"%}
+
+{% block content %}
+<table class="table table-striped table-hover">
+<thead>
+    <tr>
+        <th>Назва</th>
+        <th>Додаткова інформація </th>
+        <th>Список турнірів</th>
+        
+    </tr>
+</thead>
+<tbody>
+    {% for tournament in tournaments %}
+    <tr>
+
+        <td>{{tournament.name}}</td>
+        <td>{{tournament.bio}}</td>
+    
+        <td>
+        {%for team in tournament.teams.all%}
+            {{team}},
+        {%endfor%}
+        </td>
+    </tr>
+        {% endfor %}
+</tbody>
+</table>
+{% endblock content %}

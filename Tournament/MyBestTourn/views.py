@@ -1,8 +1,19 @@
 from django.shortcuts import render, redirect
-from .forms import TournamentForm,TeamForm
-from .models import Tournament,Team
+from .forms import TournamentForm,TeamForm,ContactForm
+from .models import Tournament,Team,Contact
+
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login,authenticate,logout
+
+
 
 # Create your views here.
+
+
+
+
+
 
 def index(request):
     context = {
